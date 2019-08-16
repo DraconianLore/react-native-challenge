@@ -24,6 +24,18 @@ export default function RootReducer(state = InitialState, action) {
     /**
      * Your code begins here ...
      */
+    case FETCH_USERS_SUCCESS:
+      return {
+        users: action.users,
+        serverError: null
+      };   // replace
+    case FETCH_USERS_ERROR:
+      return {
+        users: [],
+        serverError: action.error
+      };   // replace
+    case CLEAR_USERS:
+      return InitialState;   // replace
 
     // ...
      

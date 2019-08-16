@@ -26,11 +26,22 @@ export function FetchUsers() {
     
       // Your code starts here ...
 
-      .then()
-      .catch();
+      .then(({ data }) => {
+        dispatch(dataFetched(data))
+      })
+      .catch(err => {
+        dispatch(fetchFailed(err))
+      });
 
       // Your code ends here ...
   };
+}
+
+export function dataFetched(users) {
+  return { type: FETCH_USERS_SUCCESS, users }
+}
+export function fetchFailed(error) {
+  return { type: FETCH_USERS_ERROR, error }
 }
 
 export function ClearUsers() {

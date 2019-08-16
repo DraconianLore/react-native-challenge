@@ -8,7 +8,7 @@ import Home from '../components/HomeScreen';
 /**
  * @TODO Uncomment when the stack navigator is implemented.
  */
-// import DirectoryStackNavigator from './DirectoryStackNavigator';
+import DirectoryStackNavigator from './DirectoryStackNavigator';
 
 const BottomTabConfig = {
   Home,
@@ -16,11 +16,11 @@ const BottomTabConfig = {
   /**
    * @TODO Uncomment when the stack navigator is implemented.
    */
-  // UsersList: DirectoryStackNavigator
+  UsersList: DirectoryStackNavigator
 };
 
 const RouteConfigs = {
-  // initialRouteName: 'Home'
+  initialRouteName: 'Home'
 };
 
 export default createBottomTabNavigator(BottomTabConfig, RouteConfigs)

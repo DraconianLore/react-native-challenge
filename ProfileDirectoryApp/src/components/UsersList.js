@@ -31,7 +31,7 @@ class UsersList extends Component {
       users: Users
     };
   }
-
+  
   fetchUsers = () => {
     this.props.FetchUsers();
   }
@@ -41,22 +41,23 @@ class UsersList extends Component {
   }
   
   render() {
-
     const UsersComponentList = (
       
       /**
        * @TODO Replace this line with the commented out line
        *  just below it once you successfully retrieve users.
        */
-      this.state.users && this.state.users.map(user => {
-      // this.props.users && this.props.users.map(user => {
+      // this.state.users && this.state.users.map(user => {
+      this.props.users && this.props.users.map(user => {
 
         return (
           <View key={user.id}>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('UserDetail', { user })}
+              onPress={() => {
+                this.props.navigation.navigate('UserDetail', { user })}
+              }
               style={Styles.userButton}
-            >
+              >
               <Text style={Styles.userText}>{ user.name }</Text>
               <Text style={Styles.userText}>{ user.email }</Text>
               <Text style={Styles.userText}>{ user.phone }</Text>
